@@ -96,7 +96,7 @@ void loop() {
      str = Serial.readStringUntil('\n');
      count = StringSplit(str,':',sParams,6);
 
-     //rotate at a defined speed with a defined acceleration.
+     //rotate at a set speed with a set acceleration.
      if(sParams[0] == "rot" && count == 2){
           rotating = true;
           positioning = false;
@@ -115,14 +115,14 @@ void loop() {
         stepper.setSpeed(sParams[1].toFloat());      
      }
 
-     // define speed settings
+     // define speed settings. Use=> spd:speed_in_steps_per_second.
      if(sParams[0] == "spd" && count == 2){
       motorspeed = sParams[1].toFloat();
       stepper.setMaxSpeed(motorspeed);
       stepper.setSpeed(motorspeed);
      }
      
-     // define acceleration settings
+     // define acceleration settings. Use=> acc:acceleration_in_steps_per_second_per_second
      if(sParams[0] == "acc" && count == 2){
       motoraccel = sParams[1].toFloat();
       if(motoraccel == 0){
@@ -131,7 +131,7 @@ void loop() {
       stepper.setAcceleration(motoraccel);
      }
 
-     // enable or disable the motor
+     // enable or disable the motor Use=> motor:disable
      if(sParams[0] == "motor" && count == 2){
       if(sParams[1] == "enable"){
         digitalWrite(enablePin, LOW);
@@ -140,7 +140,7 @@ void loop() {
       }
      }
 
-     // selection of microstepping mode
+     // selection of microstepping mode. Use=> mode:1 for full step mode, mode:2 for half step mope, etc.
      if(sParams[0] == "mode" && count == 2){
       if(sParams[1] == "1"){
         digitalWrite(m0Pin,fullStep[0]);
