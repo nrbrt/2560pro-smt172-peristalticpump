@@ -1,5 +1,5 @@
 # 2560pro-smt172-peristalticpump
-Controls a peristaltic pump, reports temperature from 2 smt172 sensors and measures differential pressure using a mpx7002dp sensor
+Controls a peristaltic pump using a drv8825 steppermotor driver, reports temperature from 2 smt172 sensors and measures differential pressure using a mpx7002dp sensor
 The commands that can be sent are the following:
 
 `pos:w`
@@ -18,6 +18,15 @@ where y is the speed in steps per second to be used during rotation or positioni
 `acc:z`
 
 where z is the acceleration in steps per second per second to be used during rotation or positioning. With this setting you can ramp up and down. Useful at higher speeds and microstepping
+
+`mode:x`
+
+This selects the microstepping mode on the drv8825 steppermotor driver. D29 on the mega connects to m0 on the drv8825, D27 to m1 and D25 to m2. The default is full step mode
+
+`motor:x`
+
+This enables or disables the motor, so it is not held in position actively. x can be `disable` or `enable`, so `motor:disable` will free the motor. The default is enabled.
+
 
 The Mega will report every second the temperatures in Celsius and the differential pressure in kPa using the format `t1:xx,t2:yy,p:zz`. If the temperature sensors are not present,
 it will report -1 as the value for that sensor. Absence of the pressure sensor will result in a negative value caused by the floating A0 pin.
