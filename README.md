@@ -21,9 +21,7 @@ where z is the acceleration in steps per second per second to be used during rot
 
 `mode:x`
 
-This selects the microstepping mode on the drv8825 steppermotor driver. `1` is full step, `2` is 1/2 step, `4` is 1/4, `8` is 1/8 step, `16` is 1/16 step and `32` is 1/32 step. The default is full step mode. The default is full step mode
-
-`motor:x`
+This selects the microstepping mode on the drv8825 steppermotor driver. `1` is full step, `2` is 1/2 step, `4` is 1/4, `8` is 1/8 step, `16` is 1/16 step and `32` is 1/32 step. The default is full step mode.
 
 This enables or disables the motor, so it is not held in position actively. x can be `disable` or `enable`, so `motor:disable` will free the motor. The default is enabled.
 
