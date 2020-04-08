@@ -35,6 +35,6 @@ The install script is meant to be run on a raspberry pi like this:
 This will program the mega, that needs to be connected at that moment, without any user interaction and is meant for novice users
 and easy installation.
 
-The smt172 sensors need to be connected to pin 48 and pin 49 and need some electronics to connect to the Arduino as shown in the connection diagram, the drv8825 connects to pin 12(dir) and pin 11(step), the home-switch to pin 10 and the mpx7002dp connects to A0.For microstepping that can be set by software, D29 on the mega connects to m0 on the drv8825, D27 to m1 and D25 to m2. If you want to be able to enable/disable the motor, D31 on the mega connects to "enable" on the drv8825.
+The smt172 sensors need to be connected to pin 48 and pin 49 and need some electronics to connect to the Arduino as shown in the connection diagram, the drv8825 connects to pin 12(dir) and pin 11(step)and the mpx7002dp connects to A0.For microstepping that can be set by software, D29 on the mega connects to m0 on the drv8825, D27 to m1 and D25 to m2. If you want to be able to enable/disable the motor, D31 on the mega connects to "enable" on the drv8825.
 
 This sketch uses the great smt172 library and smt172 connection diagram picture by Edwin Croissant.
